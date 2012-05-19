@@ -37,6 +37,9 @@ public class Main {
 		
 		/**
 		 * Put students in their promotions.
+		 * 
+		 * Two students are in the 1st Promotion.
+		 * The third is in the 2nd Promotion.
 		 */
 		p1.add(student1);
 		p1.add(student2);
@@ -44,6 +47,8 @@ public class Main {
 
 		/**
 		 * Put marks to students.
+		 * 
+		 * For example, we put marks for students in the 1st Promotion.
 		 */
 		prof1.setNote(p1, 1, 12, 0);
 		prof2.setNote(p1, 1, 13, 1);
@@ -55,13 +60,17 @@ public class Main {
 		
 		/**
 		 * Display all the students in a Promotion depending of his Promotion.
+		 * 
+		 * For example, we search students by their id in the 1st Promotion.
 		 */
 		
 		try {
 			System.out.println(p1.search(1));
 			System.out.println(p1.search(2));
-			System.out.println(p1.search(3));
-			System.out.println(p1.search(4));
+			// Show the student3 but doesn't have marks !
+			System.out.println(p2.search(3)); 
+			// Search a student with an id5 but doesn't exist in the 1st Promotion !
+			System.out.println(p1.search(5));
 		} catch (UnknownStudent e) {
 			System.out.println(e.getMessage());
 		}

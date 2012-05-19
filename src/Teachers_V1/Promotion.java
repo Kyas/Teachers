@@ -62,8 +62,8 @@ public class Promotion {
 		}
 
 		if (!found) {
-			throw new UnknownStudent("No student with this id " + ++i
-					+ " in the list.");
+			throw new UnknownStudent("No student with an id " + id
+					+ " in the Promotion !");
 		} else {
 			return s;
 		}
