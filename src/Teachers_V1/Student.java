@@ -52,6 +52,7 @@ public class Student extends Person implements Comparable<Student> {
 	public Student(String name, String forename, int id) {
 		super(name, forename);
 		this.id = id;
+		p = null;
 	}
 
 	/**

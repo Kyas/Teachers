@@ -90,10 +90,24 @@ public class Promotion {
 	 * 
 	 * @param student
 	 *            The Student.
+	 * @return <code>1</code> if the adding was a success, <code>0</code> otherwise.
 	 */
-	public void add(Student student) {
-		list.add(student);
-		student.setP(this);
+	public int add(Student student) {
+		int i;
+		boolean error = false;
+		for (i = 0; i < list.size(); i++) {
+			if (list.get(i).getId() == student.getId()) {
+				error = true;
+			}
+		}
+		if (error) {
+			System.out.println("Error : Same ID in the Promotion !");
+		} else {
+			list.add(student);
+			student.setP(this);
+			return 1;
+		}
+		return 0;
 	}
 
 	/**

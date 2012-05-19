@@ -1,3 +1,8 @@
+package Teachers_V1.main;
+
+import java.util.NoSuchElementException;
+import java.util.Scanner;
+
 /**
  * MainInteract.java
  * 
@@ -8,57 +13,64 @@
  * Teachers is free software: you can redistribute it and/or modify
  * it under the terms of the zlib license. See the COPYING file.
  * 
- * @author JÃ©rÃ©my LOR <jlor@etudiant.univ-mlv.fr>
+ * @author Jérémy LOR <jlor@etudiant.univ-mlv.fr>
  * @author Thomas LEROUX <tleroux@etudiant.univ-mlv.fr>
  */
-
-package Teachers_V1.main;
-
-import java.util.Scanner;
-
 public class MainInteract {
 
 	public static void main(String[] args) {
 
-		while (true) { // When we don't want to quit the program now.
-			System.out.println(Interact.menu());
-			int res = -1;
-			
-			while (res < 0 || res > 9) {
-				Scanner sc = new Scanner(System.in);
-				res = sc.nextInt();
+		try {
+			while (true) { // When we don't want to quit the program now.
+				System.out.println(Interact.menu());
+				int res = -1;
+				
+				while (res < 0 || res > 9) {
+					Scanner sc = new Scanner(System.in);
+					res = sc.nextInt();
+				}
+	
+				switch (res) {
+				case 0:
+					Interact.createStudent();
+					break;
+				case 1:
+					Interact.createProfessor();
+					break;
+				case 2:
+					Interact.addStudent();
+					break;
+				case 3:
+					Interact.addMarks();
+					break;
+				case 4:
+					Interact.displayPromotion();
+					break;
+				case 5:
+					Interact.displayStudent(0);
+					break;
+				case 6:
+					Interact.displayStudent(1);
+					break;
+				case 7:
+					Interact.sortStudentsPromotion(0);
+					break;
+				case 8:
+					Interact.sortStudentsPromotion(1);
+					break;
+				case 9:
+					System.out.println("End of the Program.");
+					System.exit(0);
+					break;
+				default:
+					System.out.println("End of the Program.");
+					System.exit(0);
+					break;
+				}
+	
 			}
-
-			switch (res) {
-			case 0:
-				Interact.createStudent();
-				break;
-			case 1:
-				Interact.createProfessor();
-				break;
-			case 2:
-				Interact.addStudent();
-				break;
-			case 3:
-				break;
-			case 4:
-				break;
-			case 5:
-				break;
-			case 6:
-				break;
-			case 7:
-				break;
-			case 8:
-				break;
-			case 9:
-				System.out.println("End of the Program.");
-				System.exit(0);
-				break;
-			default:
-				break;
-			}
-
+		} catch(NoSuchElementException e) {
+			System.out.println("Program Interruption.");
 		}
 	}
 

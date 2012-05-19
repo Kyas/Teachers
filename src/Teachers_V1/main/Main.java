@@ -54,7 +54,7 @@ public class Main {
 		prof1.setNote(p1, 2, 15, 5);
 		
 		/**
-		 * Display all the students in a Promotion.
+		 * Display all the students in a Promotion depending of his Promotion.
 		 */
 		
 		try {
