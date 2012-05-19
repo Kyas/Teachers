@@ -1,65 +1,90 @@
+/**
+ * Main.java
+ * 
+ * Copyright 2012 
+ * 
+ * This file is part of the Java Project : Teachers.
+ * 
+ * Teachers is free software: you can redistribute it and/or modify
+ * it under the terms of the zlib license. See the COPYING file.
+ * 
+ * @author Jérémy LOR <jlor@etudiant.univ-mlv.fr>
+ * @author Thomas LEROUX <tleroux@etudiant.univ-mlv.fr>
+ */
+
 package Teachers_V1.main;
 
-import Teachers_V1.Eleve;
-import Teachers_V1.Prof;
+import Teachers_V1.Student;
+import Teachers_V1.Professor;
 import Teachers_V1.Promotion;
-import Teachers_V1.exceptions.EleveInexistant;
+import Teachers_V1.exceptions.UnknownStudent;
 
 public class Main {
 	public static void main(String[] args) {
 		
-		Promotion p1 = new Promotion("Promotion des binious");
+		Promotion p1 = new Promotion("Biniou's Promotion");
+		Promotion p2 = new Promotion("GodLike's Promotion");
 
 		/**
-		 * Créer 4 élèves et 2 professeurs.
+		 * Creates 4 students and 2 professors.
 		 */
-		Eleve eleve1 = new Eleve("Jean", "Duval", 1);
-		Eleve eleve2 = new Eleve("Pierre", "Pons", 2);
-		Eleve eleve3 = new Eleve("Paul", "Durand", 3);
+		Student student1 = new Student("Lor", "Jérémy", 1);
+		Student student2 = new Student("Le Roux", "Thomas", 2);
+		Student student3 = new Student("Norris", "Chuck", 3);
 		
-		Prof prof1 = new Prof("Tournesol", "Soleil");
-		Prof prof2 = new Prof("La Menace", "Max");
+		Professor prof1 = new Professor("Paumier", "Sébastien");
+		Professor prof2 = new Professor("Zipstein", "Marc");
 		
 		/**
-		 * Ranger les élèves dans leur promotion.
+		 * Put students in their promotions.
 		 */
-		p1.add(eleve1);
-		p1.add(eleve2);
-		p1.add(eleve3);
+		p1.add(student1);
+		p1.add(student2);
+		p2.add(student3);
 
 		/**
-		 * Mettre des notes aux élèves.
+		 * Put marks to students.
 		 */
 		prof1.setNote(p1, 1, 12, 0);
-		prof2.setNote(p1, 1, 6, 1);
+		prof2.setNote(p1, 1, 13, 1);
 		prof1.setNote(p1, 1, 15, 7);
 		
-		prof1.setNote(p1, 2, 8, 0);
+		prof1.setNote(p1, 2, 18, 0);
+		prof1.setNote(p1, 2, 16, 3);
+		prof1.setNote(p1, 2, 15, 5);
 		
-		prof2.setNote(p1, 3, 5, 0);
+		prof2.setNote(p2, 3, 20, 0);
 
 		/**
-		 * Afficher tous les élèves d'une Promotion.
+		 * Display all the students in a Promotion.
 		 */
 		
 		try {
-			System.out.println(p1.rechercher(1));
-			System.out.println(p1.rechercher(2));
-			System.out.println(p1.rechercher(3));
-			System.out.println(p1.rechercher(4));
-		} catch (EleveInexistant e) {
+			System.out.println(p1.search(1));
+			System.out.println(p1.search(2));
+			System.out.println(p1.search(3));
+			System.out.println(p1.search(4));
+		} catch (UnknownStudent e) {
 			System.out.println(e.getMessage());
 		}
 		
-		System.out.println(eleve1.afficherMoyenne());
-		System.out.println(eleve2.afficherMoyenne());
-		System.out.println(eleve3.afficherMoyenne());
+		/**
+		 * Display averages of students.
+		 */
+		System.out.println(student1.displayAverage());
+		System.out.println(student2.displayAverage());
+		System.out.println(student3.displayAverage());
 		
-		System.out.println("Tri Croissant :");
+		/**
+		 * Sort the promotion 1 with the 2 modes.
+		 */
+		System.out.println();
+		System.out.println("Ascending Order :");
 		p1.sort(0);
 		System.out.println(p1);
 		
-		System.out.println("Tri Décroissant :");
+		System.out.println();
+		System.out.println("Descending Order :");
 		p1.sort(1);
 		System.out.println(p1);
 	}
