@@ -116,6 +116,20 @@ public class Student extends Person implements Comparable<Student> {
 		}
 		return sb.toString();
 	}
+	
+	/**
+	 * Display the student with his name/forename.
+	 * 
+	 * @return The student.
+	 */
+	public String displayNames() {
+		StringBuilder sb = new StringBuilder();
+
+		sb.append(super.name + " " + super.forename);
+		
+		return sb.toString();
+	}
+
 
 	/**
 	 * Display the student with his name/forename and average.

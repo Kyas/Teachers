@@ -53,8 +53,6 @@ public class Main {
 		prof1.setNote(p1, 2, 16, 3);
 		prof1.setNote(p1, 2, 15, 5);
 		
-		prof2.setNote(p2, 3, 20, 0);
-
 		/**
 		 * Display all the students in a Promotion.
 		 */
@@ -71,6 +69,7 @@ public class Main {
 		/**
 		 * Display averages of students.
 		 */
+		System.out.println();
 		System.out.println(student1.displayAverage());
 		System.out.println(student2.displayAverage());
 		System.out.println(student3.displayAverage());
@@ -83,7 +82,6 @@ public class Main {
 		p1.sort(0);
 		System.out.println(p1);
 		
-		System.out.println();
 		System.out.println("Descending Order :");
 		p1.sort(1);
 		System.out.println(p1);

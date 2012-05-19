@@ -52,5 +52,17 @@ public class Professor extends Person {
 			System.out.println("The student doesn't exist or is in the wrong Promotion !");
 		}
 	}
+	
+	/**
+	 * Display the name of a Professor.
+	 * 
+	 * @return The name of the Professor into a String.
+	 */
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append(name + " " + forename);
+		return sb.toString();
+	}
 
 }
