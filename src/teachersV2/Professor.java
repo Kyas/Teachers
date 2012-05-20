@@ -3,14 +3,17 @@ package teachersV2;
 import teachersV2.exceptions.UnknownStudent;
 
 /**
- * Professor.java
+ * The professor can put marks to students depending of the promotion, the id of
+ * the student and if he wants to add/modify a mark.<br />
+ * <br />
  * 
- * Copyright 2012
- * 
- * This file is part of the Java Project : Teachers.
+ * Copyright 2012 - This file is part of the Java Project : Teachers.<br />
+ * <br />
  * 
  * Teachers is free software: you can redistribute it and/or modify it under the
- * terms of the zlib license. See the COPYING file.
+ * terms of the zlib license.<br />
+ * See the COPYING file.<br />
+ * <br />
  * 
  * @author Jeremy LOR <jlor@etudiant.univ-mlv.fr>
  * @author Thomas LEROUX <tleroux@etudiant.univ-mlv.fr>
@@ -75,7 +78,7 @@ public class Professor extends Person {
 	 * Return if two professors are equals.
 	 * 
 	 * @param o
-	 *           An object of type Professor.
+	 *            An object of type Professor.
 	 * @return <code>true</code> if these two professors are equals,
 	 *         <code>false</code> otherwise.
 	 */

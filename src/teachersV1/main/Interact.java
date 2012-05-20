@@ -9,14 +9,16 @@ import teachersV1.Promotion;
 import teachersV1.Student;
 
 /**
- * Interact.java
+ * This class contains all the implementation for the console mode advanced.<br />
+ * <br />
  * 
- * Copyright 2012
- * 
- * This file is part of the Java Project : Teachers.
+ * Copyright 2012 - This file is part of the Java Project : Teachers.<br />
+ * <br />
  * 
  * Teachers is free software: you can redistribute it and/or modify it under the
- * terms of the zlib license. See the COPYING file.
+ * terms of the zlib license.<br />
+ * See the COPYING file.<br />
+ * <br />
  * 
  * @author Jeremy LOR <jlor@etudiant.univ-mlv.fr>
  * @author Thomas LEROUX <tleroux@etudiant.univ-mlv.fr>
@@ -303,8 +305,9 @@ public class Interact {
 				System.out.print("Give a name: ");
 				String name = scName.nextLine();
 				Promotion pNew = new Promotion(name);
-				
-				// We check if the professor doesn't still exist in the Professor List.
+
+				// We check if the professor doesn't still exist in the
+				// Professor List.
 				boolean exist = false;
 				for (int i = 0; i < pList.size(); i++) {
 					if (pList.get(i).equals(pNew)) {
@@ -314,11 +317,12 @@ public class Interact {
 
 				if (!exist) {
 					pList.add(pNew);
-					System.out.println("Promotion " + pNew.getName() + " created.");
+					System.out.println("Promotion " + pNew.getName()
+							+ " created.");
 				} else {
 					System.out.println("This promotion still exist !");
 				}
-				
+
 				System.out.println("Which student do you want to add in ?");
 				displayStudentList();
 				Scanner scIndex = new Scanner(System.in);
@@ -416,8 +420,9 @@ public class Interact {
 				}
 				prof.setNote(s.getP(), s.getId(), value, index);
 
-				System.out.println("Mark with value " + value + " added in the student "
-						+ s.displayNames() + " with the grader " + prof);
+				System.out.println("Mark with value " + value
+						+ " added in the student " + s.displayNames()
+						+ " with the grader " + prof);
 			}
 		}
 
@@ -451,8 +456,10 @@ public class Interact {
 
 			if (mode == 0) {
 				p.sort(0);
+				System.out.println(p);
 			} else {
 				p.sort(1);
+				System.out.println(p);
 			}
 		}
 

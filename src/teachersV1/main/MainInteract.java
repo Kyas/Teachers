@@ -4,14 +4,16 @@ import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 /**
- * MainInteract.java
+ * This is the main Test for the Version Console Mode 1 Advanced (V1).<br />
+ * <br />
  * 
- * Copyright 2012 
+ * Copyright 2012 - This file is part of the Java Project : Teachers.<br />
+ * <br />
  * 
- * This file is part of the Java Project : Teachers.
- * 
- * Teachers is free software: you can redistribute it and/or modify
- * it under the terms of the zlib license. See the COPYING file.
+ * Teachers is free software: you can redistribute it and/or modify it under the
+ * terms of the zlib license.<br />
+ * See the COPYING file.<br />
+ * <br />
  * 
  * @author Jeremy LOR <jlor@etudiant.univ-mlv.fr>
  * @author Thomas LEROUX <tleroux@etudiant.univ-mlv.fr>
@@ -24,12 +26,12 @@ public class MainInteract {
 			while (true) { // When we don't want to quit the program now.
 				System.out.println(Interact.menu());
 				int res = -1;
-				
+
 				while (res < 0 || res > 9) {
 					Scanner sc = new Scanner(System.in);
 					res = sc.nextInt();
 				}
-	
+
 				switch (res) {
 				case 0:
 					Interact.createStudent();
@@ -67,9 +69,9 @@ public class MainInteract {
 					System.exit(0);
 					break;
 				}
-	
+
 			}
-		} catch(NoSuchElementException e) {
+		} catch (NoSuchElementException e) {
 			System.out.println("Program Interruption.");
 		}
 	}

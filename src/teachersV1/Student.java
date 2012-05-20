@@ -5,16 +5,18 @@ import java.util.Set;
 
 import teachersV1.exceptions.EmptyMarks;
 
-
 /**
- * Student.java
+ * A student is represented with an id, a promotion if he got one and can have
+ * marks (10 the maximum).<br />
+ * <br />
  * 
- * Copyright 2012
- * 
- * This file is part of the Java Project : Teachers.
+ * Copyright 2012 - This file is part of the Java Project : Teachers.<br />
+ * <br />
  * 
  * Teachers is free software: you can redistribute it and/or modify it under the
- * terms of the zlib license. See the COPYING file.
+ * terms of the zlib license.<br />
+ * See the COPYING file.<br />
+ * <br />
  * 
  * @author Jeremy LOR <jlor@etudiant.univ-mlv.fr>
  * @author Thomas LEROUX <tleroux@etudiant.univ-mlv.fr>
@@ -118,7 +120,7 @@ public class Student extends Person implements Comparable<Student> {
 		}
 		return sb.toString();
 	}
-	
+
 	/**
 	 * Display the student with his name/forename.
 	 * 
@@ -128,10 +130,9 @@ public class Student extends Person implements Comparable<Student> {
 		StringBuilder sb = new StringBuilder();
 
 		sb.append(super.name + " " + super.forename);
-		
+
 		return sb.toString();
 	}
-
 
 	/**
 	 * Display the student with his name/forename and average.
@@ -198,7 +199,7 @@ public class Student extends Person implements Comparable<Student> {
 	 * Return if two students are equals.
 	 * 
 	 * @param o
-	 *           An object of type Student.
+	 *            An object of type Student.
 	 * @return <code>true</code> if these two students are equals,
 	 *         <code>false</code> otherwise.
 	 */
@@ -206,12 +207,13 @@ public class Student extends Person implements Comparable<Student> {
 	public boolean equals(Object o) {
 		if (o != null && o instanceof Student) {
 			Student s = (Student) o;
-			return (this.name.equals(s.name) && this.forename.equals(s.forename));
+			return (this.name.equals(s.name) && this.forename
+					.equals(s.forename));
 
 		}
 		return false;
 	}
-	
+
 	/**
 	 * Get the marks of a student.
 	 * 

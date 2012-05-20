@@ -3,14 +3,17 @@ package teachersV1;
 import teachersV1.exceptions.UnknownStudent;
 
 /**
- * Professor.java
+ * The professor can put marks to students depending of the promotion, the id of
+ * the student and if he wants to add/modify a mark.<br />
+ * <br />
  * 
- * Copyright 2012 
+ * Copyright 2012 - This file is part of the Java Project : Teachers.<br />
+ * <br />
  * 
- * This file is part of the Java Project : Teachers.
- * 
- * Teachers is free software: you can redistribute it and/or modify
- * it under the terms of the zlib license. See the COPYING file.
+ * Teachers is free software: you can redistribute it and/or modify it under the
+ * terms of the zlib license.<br />
+ * See the COPYING file.<br />
+ * <br />
  * 
  * @author Jeremy LOR <jlor@etudiant.univ-mlv.fr>
  * @author Thomas LEROUX <tleroux@etudiant.univ-mlv.fr>
@@ -28,31 +31,37 @@ public class Professor extends Person {
 	}
 
 	/**
-	 * Set or Modify a mark depending of the student's array.
-	 * - Set : If no marks is in the specified index, we add the new mark in the array.
-	 * - Modify : If a mark does exist in a index of the student's array, we modify it 
-	 * 	with the new value.
+	 * Set or Modify a mark depending of the student's array. - Set : If no
+	 * marks is in the specified index, we add the new mark in the array. -
+	 * Modify : If a mark does exist in a index of the student's array, we
+	 * modify it with the new value.
 	 * 
-	 * @param p The Promotion where student is.
-	 * @param id The identifying student.
-	 * @param value The value of the mark.
-	 * @param index The index in the student's array
+	 * @param p
+	 *            The Promotion where student is.
+	 * @param id
+	 *            The identifying student.
+	 * @param value
+	 *            The value of the mark.
+	 * @param index
+	 *            The index in the student's array
 	 */
 	public void setNote(Promotion p, int id, float value, int index) {
 		Student corrected = null;
 		try {
 			corrected = p.search(id);
 			if (corrected.getMarks()[index] == null)
-				corrected.getMarks()[index] = new Evaluation(this, corrected, value);
+				corrected.getMarks()[index] = new Evaluation(this, corrected,
+						value);
 			else {
 				corrected.getMarks()[index].setValue(value);
 				corrected.getMarks()[index].setCorrected(this);
 			}
 		} catch (UnknownStudent e) {
-			System.out.println("The student doesn't exist or is in the wrong Promotion !");
+			System.out
+					.println("The student doesn't exist or is in the wrong Promotion !");
 		}
 	}
-	
+
 	/**
 	 * Display the name of a Professor.
 	 * 
@@ -64,12 +73,12 @@ public class Professor extends Person {
 		sb.append(name + " " + forename);
 		return sb.toString();
 	}
-	
+
 	/**
 	 * Return if two professors are equals.
 	 * 
 	 * @param o
-	 *           An object of type Professor.
+	 *            An object of type Professor.
 	 * @return <code>true</code> if these two professors are equals,
 	 *         <code>false</code> otherwise.
 	 */

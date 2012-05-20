@@ -6,14 +6,17 @@ import java.util.Collections;
 import teachersV2.exceptions.UnknownStudent;
 
 /**
- * Promotion.java
+ * The Promotion permits to sort students in promotions to know where they
+ * belong to.<br />
+ * <br />
  * 
- * Copyright 2012
- * 
- * This file is part of the Java Project : Teachers.
+ * Copyright 2012 - This file is part of the Java Project : Teachers.<br />
+ * <br />
  * 
  * Teachers is free software: you can redistribute it and/or modify it under the
- * terms of the zlib license. See the COPYING file.
+ * terms of the zlib license.<br />
+ * See the COPYING file.<br />
+ * <br />
  * 
  * @author Jeremy LOR <jlor@etudiant.univ-mlv.fr>
  * @author Thomas LEROUX <tleroux@etudiant.univ-mlv.fr>
@@ -90,7 +93,8 @@ public class Promotion {
 	 * 
 	 * @param student
 	 *            The Student.
-	 * @return <code>1</code> if the adding was a success, <code>0</code> otherwise.
+	 * @return <code>1</code> if the adding was a success, <code>0</code>
+	 *         otherwise.
 	 */
 	public int add(Student student) {
 		int i;
@@ -104,7 +108,7 @@ public class Promotion {
 			System.out.println("Error : Same ID in the Promotion !");
 		} else {
 			list.add(student);
-			if(student.getP() != null) {
+			if (student.getP() != null) {
 				student.setP(null);
 			}
 			student.setP(this);
@@ -139,12 +143,12 @@ public class Promotion {
 		}
 		return 0;
 	}
-	
+
 	/**
 	 * Return if two promotions are equals.
 	 * 
 	 * @param o
-	 *           An object of type Promotion.
+	 *            An object of type Promotion.
 	 * @return <code>true</code> if these two promotions are equals,
 	 *         <code>false</code> otherwise.
 	 */
