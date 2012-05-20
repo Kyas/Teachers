@@ -1,5 +1,12 @@
+package teachersV1.main;
+
+import teachersV1.Professor;
+import teachersV1.Promotion;
+import teachersV1.Student;
+import teachersV1.exceptions.UnknownStudent;
+
 /**
- * Main.java
+ * MainInteract.java
  * 
  * Copyright 2012 
  * 
@@ -8,17 +15,9 @@
  * Teachers is free software: you can redistribute it and/or modify
  * it under the terms of the zlib license. See the COPYING file.
  * 
- * @author Jérémy LOR <jlor@etudiant.univ-mlv.fr>
+ * @author Jeremy LOR <jlor@etudiant.univ-mlv.fr>
  * @author Thomas LEROUX <tleroux@etudiant.univ-mlv.fr>
  */
-
-package teachersV1.main;
-
-import teachersV1.Professor;
-import teachersV1.Promotion;
-import teachersV1.Student;
-import teachersV1.exceptions.UnknownStudent;
-
 public class Main {
 	public static void main(String[] args) {
 		
