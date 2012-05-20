@@ -20,6 +20,8 @@ import teachersV2.service.Read;
  */
 public class FileReader extends FileReaderService {
 
+	public Promotion promotion = null;
+	
 	@Override
 	public void displayLines(String[] tokens) {
 		StringBuilder sb = new StringBuilder();
@@ -38,7 +40,9 @@ public class FileReader extends FileReaderService {
 	@Override
 	public void getLine(String[] tokens) {
 		int n = Integer.valueOf(tokens[0]);
+		
 		switch (n) {
+		
 		case 1:
 			Student s = new Student(tokens[1], tokens[2], Integer.valueOf(tokens[3]));
 			Read.addStudent(s);
@@ -46,6 +50,7 @@ public class FileReader extends FileReaderService {
 		case 2:
 			Promotion p = new Promotion(tokens[1]);
 			Read.addPromotion(p);
+			promotion = p;
 			break;
 		case 3:
 			int i = 1;
@@ -56,8 +61,16 @@ public class FileReader extends FileReaderService {
 			}
 			break;
 		case 4:
+			int iMarks;
+			for(iMarks = 0; iMarks < tokens.length; iMarks++) {
+				if(!tokens[iMarks].equals("")) {
+					Read.addMarks(Integer.valueOf(tokens[iMarks]), promotion);
+				}
+			}
 			break;
 		case 5:
+			break;
+		case 6:
 			break;
 		default:
 

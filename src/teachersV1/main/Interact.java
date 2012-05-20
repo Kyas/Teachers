@@ -316,7 +316,7 @@ public class Interact {
 					pList.add(pNew);
 					System.out.println("Promotion " + pNew.getName() + " created.");
 				} else {
-					System.out.println("This professor still exist !");
+					System.out.println("This promotion still exist !");
 				}
 				
 				System.out.println("Which student do you want to add in ?");

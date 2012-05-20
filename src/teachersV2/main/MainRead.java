@@ -56,12 +56,12 @@ public class MainRead {
 				case 3:
 					Read.displayPromotion();
 					break;
-//				case 4:
-//					InterfaceRead.sortStudentsPromotion(0);
-//					break;
-//				case 5:
-//					InterfaceRead.sortStudentsPromotion(1);
-//					break;
+				case 4:
+					Read.displayStudent(0);
+					break;
+				case 5:
+					Read.displayStudent(1);
+					break;
 				case 6:
 					break;
 				case 7:

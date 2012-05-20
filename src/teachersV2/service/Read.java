@@ -208,7 +208,23 @@ public class Read {
 	public static int addPromotion(Promotion p) {
 		if (p == null)
 			return 0;
-		pList.add(p);
+		
+		// We check if the professor doesn't still exist in the Professor List.
+		boolean exist = false;
+		for (int i = 0; i < pList.size(); i++) {
+			if (pList.get(i).equals(p)) {
+				exist = true;
+			}
+		}
+
+		if (!exist) {
+			pList.add(p);
+			return 1;
+		} 
+		return 0;
+	}
+	
+	public static int addMarks(int index, Promotion p) {
 		return 0;
 	}
 
