@@ -1,16 +1,19 @@
 package teachersV2.io;
 
-import teachersV2.io.FileReaderService;
+import teachersV2.Professor;
+import teachersV2.Promotion;
+import teachersV2.Student;
+import teachersV2.service.Read;
 
 /**
  * DisplayFileReader.java - Version 2
  * 
- * Copyright 2012 
+ * Copyright 2012
  * 
  * This file is part of the Java Project : Teachers.
  * 
- * Teachers is free software: you can redistribute it and/or modify
- * it under the terms of the zlib license. See the COPYING file.
+ * Teachers is free software: you can redistribute it and/or modify it under the
+ * terms of the zlib license. See the COPYING file.
  * 
  * @author Jeremy LOR <jlor@etudiant.univ-mlv.fr>
  * @author Thomas LEROUX <tleroux@etudiant.univ-mlv.fr>
@@ -25,7 +28,6 @@ public class FileReader extends FileReaderService {
 			if (i != tokens.length - 1) {
 				sb.append(tokens[i] + ", ");
 			} else {
-				
 				sb.append(tokens[i]);
 			}
 		}
@@ -38,43 +40,27 @@ public class FileReader extends FileReaderService {
 		int n = Integer.valueOf(tokens[0]);
 		switch (n) {
 		case 1:
-			for (int i = 1; i < tokens.length; i++) {
-				System.out.println(tokens[i]);
-			}
+			Student s = new Student(tokens[1], tokens[2], Integer.valueOf(tokens[3]));
+			Read.addStudent(s);
 			break;
 		case 2:
-			for (int i = 1; i < tokens.length; i++) {
-				System.out.println(tokens[i]);
-			}
+			Promotion p = new Promotion(tokens[1]);
+			Read.addPromotion(p);
 			break;
 		case 3:
-			for (int i = 1; i < tokens.length; i++) {
-				System.out.println(tokens[i]);
+			int i = 1;
+			while(i != tokens.length) {
+					Professor prof = new Professor(tokens[i], tokens[i+1]);
+					Read.addProfessors(prof);
+					i = i+2;
 			}
 			break;
 		case 4:
-			for (int i = 1; i < tokens.length; i++) {
-				System.out.println(tokens[i]);
-			}
 			break;
 		case 5:
-			for (int i = 1; i < tokens.length; i++) {
-				System.out.println(tokens[i]);
-			}
-			break;
-		case 6:
-			for (int i = 1; i < tokens.length; i++) {
-				System.out.println(tokens[i]);
-			}
-			break;
-		case 7:
-			for (int i = 1; i < tokens.length; i++) {
-				System.out.println(tokens[i]);
-			}
 			break;
 		default:
 
 		}
 	}
-
 }
