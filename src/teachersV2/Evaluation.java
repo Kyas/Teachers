@@ -13,8 +13,8 @@ package teachersV2;
  * See the COPYING file.<br />
  * <br />
  * 
- * @author Jeremy LOR <jlor@etudiant.univ-mlv.fr>
- * @author Thomas LEROUX <tleroux@etudiant.univ-mlv.fr>
+ * @author Jeremy LOR (jlor@etudiant.univ-mlv.fr)
+ * @author Thomas LEROUX (tleroux@etudiant.univ-mlv.fr)
  */
 public class Evaluation {
 	/*

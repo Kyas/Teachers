@@ -18,8 +18,8 @@ import teachersV1.exceptions.EmptyMarks;
  * See the COPYING file.<br />
  * <br />
  * 
- * @author Jeremy LOR <jlor@etudiant.univ-mlv.fr>
- * @author Thomas LEROUX <tleroux@etudiant.univ-mlv.fr>
+ * @author Jeremy LOR (jlor@etudiant.univ-mlv.fr)
+ * @author Thomas LEROUX (tleroux@etudiant.univ-mlv.fr)
  */
 public class Student extends Person implements Comparable<Student> {
 	/*
