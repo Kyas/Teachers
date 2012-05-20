@@ -139,6 +139,24 @@ public class Promotion {
 	}
 
 	/**
+	 * Return if two promotions are equals.
+	 * 
+	 * @param o
+	 *           An object of type Promotion.
+	 * @return <code>true</code> if these two promotions are equals,
+	 *         <code>false</code> otherwise.
+	 */
+	@Override
+	public boolean equals(Object o) {
+		if (o != null && o instanceof Promotion) {
+			Promotion p = (Promotion) o;
+			return (this.name.equals(p.name));
+
+		}
+		return false;
+	}
+	
+	/**
 	 * Get the name of the Promotion.
 	 * 
 	 * @return The name of the Promotion.

@@ -64,5 +64,24 @@ public class Professor extends Person {
 		sb.append(name + " " + forename);
 		return sb.toString();
 	}
+	
+	/**
+	 * Return if two professors are equals.
+	 * 
+	 * @param o
+	 *           An object of type Professor.
+	 * @return <code>true</code> if these two professors are equals,
+	 *         <code>false</code> otherwise.
+	 */
+	@Override
+	public boolean equals(Object o) {
+		if (o != null && o instanceof Professor) {
+			Professor prof = (Professor) o;
+			return (this.name.equals(prof.name) && this.forename
+					.equals(prof.forename));
+
+		}
+		return false;
+	}
 
 }

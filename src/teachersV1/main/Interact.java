@@ -8,16 +8,15 @@ import teachersV1.Professor;
 import teachersV1.Promotion;
 import teachersV1.Student;
 
-
 /**
  * Interact.java
  * 
- * Copyright 2012 
+ * Copyright 2012
  * 
  * This file is part of the Java Project : Teachers.
  * 
- * Teachers is free software: you can redistribute it and/or modify
- * it under the terms of the zlib license. See the COPYING file.
+ * Teachers is free software: you can redistribute it and/or modify it under the
+ * terms of the zlib license. See the COPYING file.
  * 
  * @author Jeremy LOR <jlor@etudiant.univ-mlv.fr>
  * @author Thomas LEROUX <tleroux@etudiant.univ-mlv.fr>
@@ -87,9 +86,23 @@ public class Interact {
 		try {
 			int id = scId.nextInt();
 			Student student = new Student(name, forename, id);
-			System.out.println("Student " + student.displayNames()
-					+ " created.");
-			sList.add(student);
+
+			// We check if the student doesn't still exist in the Student List.
+			boolean exist = false;
+			for (int i = 0; i < sList.size(); i++) {
+				if (sList.get(i).equals(student)) {
+					exist = true;
+				}
+			}
+
+			if (!exist) {
+				sList.add(student);
+				System.out.println("Student " + student.displayNames()
+						+ " created.");
+			} else {
+				System.out.println("This student still exist !");
+			}
+
 			System.out.println();
 		} catch (InputMismatchException e) {
 			System.out.println("Enter a valid number !");
@@ -116,8 +129,21 @@ public class Interact {
 			forename = scForename.nextLine();
 		}
 		Professor prof = new Professor(name, forename);
-		System.out.println("Professor " + prof + " created.");
-		profList.add(prof);
+
+		// We check if the professor doesn't still exist in the Professor List.
+		boolean exist = false;
+		for (int i = 0; i < profList.size(); i++) {
+			if (profList.get(i).equals(prof)) {
+				exist = true;
+			}
+		}
+
+		if (!exist) {
+			profList.add(prof);
+			System.out.println("Professor " + prof + " created.");
+		} else {
+			System.out.println("This professor still exist !");
+		}
 		System.out.println();
 	}
 
@@ -277,9 +303,22 @@ public class Interact {
 				System.out.print("Give a name: ");
 				String name = scName.nextLine();
 				Promotion pNew = new Promotion(name);
-				System.out.println("New Promotion " + pNew.getName()
-						+ " created.");
-				pList.add(pNew);
+				
+				// We check if the professor doesn't still exist in the Professor List.
+				boolean exist = false;
+				for (int i = 0; i < pList.size(); i++) {
+					if (pList.get(i).equals(pNew)) {
+						exist = true;
+					}
+				}
+
+				if (!exist) {
+					pList.add(pNew);
+					System.out.println("Promotion " + pNew.getName() + " created.");
+				} else {
+					System.out.println("This professor still exist !");
+				}
+				
 				System.out.println("Which student do you want to add in ?");
 				displayStudentList();
 				Scanner scIndex = new Scanner(System.in);
@@ -377,7 +416,7 @@ public class Interact {
 				}
 				prof.setNote(s.getP(), s.getId(), value, index);
 
-				System.out.println("Mark added in the student "
+				System.out.println("Mark with value " + value + " added in the student "
 						+ s.displayNames() + " with the grader " + prof);
 			}
 		}

@@ -195,6 +195,24 @@ public class Student extends Person implements Comparable<Student> {
 	}
 
 	/**
+	 * Return if two students are equals.
+	 * 
+	 * @param o
+	 *           An object of type Student.
+	 * @return <code>true</code> if these two students are equals,
+	 *         <code>false</code> otherwise.
+	 */
+	@Override
+	public boolean equals(Object o) {
+		if (o != null && o instanceof Student) {
+			Student s = (Student) o;
+			return (this.name.equals(s.name) && this.forename.equals(s.forename));
+
+		}
+		return false;
+	}
+	
+	/**
 	 * Get the marks of a student.
 	 * 
 	 * @return The marks.
