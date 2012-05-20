@@ -1,12 +1,13 @@
-package Teachers_V1.main;
+package teachersV1.main;
 
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import Teachers_V1.Professor;
-import Teachers_V1.Promotion;
-import Teachers_V1.Student;
+import teachersV1.Professor;
+import teachersV1.Promotion;
+import teachersV1.Student;
+
 
 /**
  * Interact.java

@@ -1,4 +1,4 @@
-package Teachers_V1.exceptions;
+package teachersV1.exceptions;
 
 /**
  * EmptyMarks.java

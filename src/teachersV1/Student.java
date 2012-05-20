@@ -1,9 +1,10 @@
-package Teachers_V1;
+package teachersV1;
 
 import java.util.HashSet;
 import java.util.Set;
 
-import Teachers_V1.exceptions.EmptyMarks;
+import teachersV1.exceptions.EmptyMarks;
+
 
 /**
  * Student.java

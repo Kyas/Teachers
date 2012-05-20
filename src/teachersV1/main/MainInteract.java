@@ -1,4 +1,4 @@
-package Teachers_V1.main;
+package teachersV1.main;
 
 import java.util.NoSuchElementException;
 import java.util.Scanner;
@@ -13,7 +13,7 @@ import java.util.Scanner;
  * Teachers is free software: you can redistribute it and/or modify
  * it under the terms of the zlib license. See the COPYING file.
  * 
- * @author Jérémy LOR <jlor@etudiant.univ-mlv.fr>
+ * @author JÃ©rÃ©my LOR <jlor@etudiant.univ-mlv.fr>
  * @author Thomas LEROUX <tleroux@etudiant.univ-mlv.fr>
  */
 public class MainInteract {

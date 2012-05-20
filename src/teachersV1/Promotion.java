@@ -1,9 +1,10 @@
-package Teachers_V1;
+package teachersV1;
 
 import java.util.ArrayList;
 import java.util.Collections;
 
-import Teachers_V1.exceptions.UnknownStudent;
+import teachersV1.exceptions.UnknownStudent;
+
 
 /**
  * Promotion.java

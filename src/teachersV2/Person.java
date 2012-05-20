@@ -1,4 +1,4 @@
-package Teachers_V1;
+package teachersV2;
 
 /**
  * Person.java

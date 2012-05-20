@@ -12,12 +12,12 @@
  * @author Thomas LEROUX <tleroux@etudiant.univ-mlv.fr>
  */
 
-package Teachers_V1.main;
+package teachersV1.main;
 
-import Teachers_V1.Student;
-import Teachers_V1.Professor;
-import Teachers_V1.Promotion;
-import Teachers_V1.exceptions.UnknownStudent;
+import teachersV1.Professor;
+import teachersV1.Promotion;
+import teachersV1.Student;
+import teachersV1.exceptions.UnknownStudent;
 
 public class Main {
 	public static void main(String[] args) {
