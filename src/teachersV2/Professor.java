@@ -1,6 +1,6 @@
 package teachersV2;
 
-import teachersV1.exceptions.UnknownStudent;
+import teachersV2.exceptions.UnknownStudent;
 
 /**
  * Professor.java

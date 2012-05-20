@@ -3,7 +3,7 @@ package teachersV2;
 import java.util.ArrayList;
 import java.util.Collections;
 
-import teachersV1.exceptions.UnknownStudent;
+import teachersV2.exceptions.UnknownStudent;
 
 /**
  * Promotion.java
@@ -63,7 +63,7 @@ public class Promotion {
 
 		if (!found) {
 			throw new UnknownStudent("No student with an id " + id
-					+ " in the Promotion !");
+					+ " in the Promotion " + name + " !");
 		} else {
 			return s;
 		}
@@ -104,6 +104,9 @@ public class Promotion {
 			System.out.println("Error : Same ID in the Promotion !");
 		} else {
 			list.add(student);
+			if(student.getP() != null) {
+				student.setP(null);
+			}
 			student.setP(this);
 			return 1;
 		}

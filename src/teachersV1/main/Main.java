@@ -21,8 +21,8 @@ import teachersV1.exceptions.UnknownStudent;
 public class Main {
 	public static void main(String[] args) {
 		
-		Promotion p1 = new Promotion("Biniou's Promotion");
-		Promotion p2 = new Promotion("GodLike's Promotion");
+		Promotion p1 = new Promotion("Biniou");
+		Promotion p2 = new Promotion("GodLike");
 
 		/**
 		 * Creates 4 students and 2 professors.

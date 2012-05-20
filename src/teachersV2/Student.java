@@ -3,7 +3,7 @@ package teachersV2;
 import java.util.HashSet;
 import java.util.Set;
 
-import teachersV1.exceptions.EmptyMarks;
+import teachersV2.exceptions.EmptyMarks;
 
 /**
  * Student.java
@@ -32,7 +32,7 @@ public class Student extends Person implements Comparable<Student> {
 	/*
 	 * The marks' Array of a specified student.
 	 */
-	private final Evaluation marks[] = new Evaluation[NB_EVALUATIONS];
+	public final Evaluation marks[] = new Evaluation[NB_EVALUATIONS];
 
 	/*
 	 * The identifying student.

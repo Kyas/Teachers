@@ -36,6 +36,10 @@ public class Read {
 	 * List of Promotions.
 	 */
 	public static ArrayList<Promotion> pList = new ArrayList<Promotion>();
+	
+	static final int NB_EVALUATIONS = 10;
+	
+	public final static String marks[] = new String[NB_EVALUATIONS];
 
 	/**
 	 * Display the menu.
@@ -58,6 +62,13 @@ public class Read {
 		return sb.toString();
 	}
 
+	public static void initMarks() {
+		int i;
+		for(i = 0; i < marks.length; i++) {
+			marks[i] = null;
+		}
+	}
+	
 	/**
 	 * Display the actual Student List in the Program.
 	 */
@@ -89,6 +100,7 @@ public class Read {
 			for (i = 0; i < sList.size(); i++) {
 				System.out.print(i + ":(" + sList.get(i).displayNames() + ") ");
 			}
+			System.out.println();
 			Scanner scIndexS = new Scanner(System.in);
 
 			Student s = null;
@@ -205,27 +217,44 @@ public class Read {
 		return 0;
 	}
 
-	public static int addPromotion(Promotion p) {
+	/**
+	 * 
+	 * @param p
+	 * @return
+	 */
+	public static Promotion addPromotion(Promotion p) {
 		if (p == null)
-			return 0;
+			return null;
 		
-		// We check if the professor doesn't still exist in the Professor List.
+		// We check if the promotion doesn't still exist in the Professor List.
 		boolean exist = false;
+		int pos = 0;
 		for (int i = 0; i < pList.size(); i++) {
 			if (pList.get(i).equals(p)) {
 				exist = true;
+				pos = i;
 			}
 		}
 
 		if (!exist) {
 			pList.add(p);
-			return 1;
+			return p;
 		} 
-		return 0;
+		return pList.get(pos);
 	}
 	
-	public static int addMarks(int index, Promotion p) {
-		return 0;
+	public static int addMarks(int index, String value) {
+		marks[index] = value;
+		return 1;
 	}
-
+	
+	public static int getIndexPromotion(Promotion p) {
+		int i, pos = 0;
+		for(i = 0; i < pList.size(); i++) {
+			if(pList.get(i).equals(p)) {
+				pos = i;
+			}
+		}
+		return pos;
+	}
 }

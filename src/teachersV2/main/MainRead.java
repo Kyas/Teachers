@@ -12,73 +12,78 @@ import teachersV2.service.Read;
 /**
  * Main.java - Version 2
  * 
- * Copyright 2012 
+ * Copyright 2012
  * 
  * This file is part of the Java Project : Teachers.
  * 
- * Teachers is free software: you can redistribute it and/or modify
- * it under the terms of the zlib license. See the COPYING file.
+ * Teachers is free software: you can redistribute it and/or modify it under the
+ * terms of the zlib license. See the COPYING file.
  * 
  * @author Jeremy LOR <jlor@etudiant.univ-mlv.fr>
  * @author Thomas LEROUX <tleroux@etudiant.univ-mlv.fr>
  */
 public class MainRead {
-	
+
 	public static void main(String[] args) {
-		
+
 		File file = new File("src\\teachersV2\\io\\notes.csv");
 		FileReaderService fr = new FileReader();
 		String path = file.getAbsolutePath();
-		
+
 		try {
 			fr.read(path, ";");
-		} catch (IOException e) {
-			System.out.println("Fichier Introuvable !");
-		}
-		
-		try {
-			while (true) { // When we don't want to quit the program now.
-				System.out.println(Read.menu());
-				int res = -1;
-				
-				while (res < 0 || res > 8) {
-					Scanner sc = new Scanner(System.in);
-					res = sc.nextInt();
+
+			try {
+				while (true) { // When we don't want to quit the program now.
+					System.out.println(Read.menu());
+					int res = -1;
+
+					while (res < 0 || res > 8) {
+						Scanner sc = new Scanner(System.in);
+						res = sc.nextInt();
+					}
+
+					switch (res) {
+					case 1:
+						Read.displayStudentList();
+						break;
+					case 2:
+						Read.displayProfessorList();
+						break;
+					case 3:
+						Read.displayPromotion();
+						break;
+					case 4:
+						Read.displayStudent(0);
+						break;
+					case 5:
+						Read.displayStudent(1);
+						break;
+					case 6:
+						break;
+					case 7:
+						break;
+					case 8:
+						System.out.println("End of the Program.");
+						System.exit(0);
+						break;
+					default:
+						System.out.println("End of the Program.");
+						System.exit(0);
+						break;
+					}
+
 				}
-	
-				switch (res) {
-				case 1:
-					Read.displayStudentList();
-					break;
-				case 2:
-					Read.displayProfessorList();
-					break;
-				case 3:
-					Read.displayPromotion();
-					break;
-				case 4:
-					Read.displayStudent(0);
-					break;
-				case 5:
-					Read.displayStudent(1);
-					break;
-				case 6:
-					break;
-				case 7:
-					break;
-				case 8:
-					System.out.println("End of the Program.");
-					System.exit(0);
-					break;
-				default:
-					System.out.println("End of the Program.");
-					System.exit(0);
-					break;
-				}
-	
+			} catch (NoSuchElementException e) {
+				System.out.println("Program Interruption.");
 			}
-		} catch(NoSuchElementException e) {
-			System.out.println("Program Interruption.");
+		} catch (IOException e) {
+			System.err
+					.println("File Not Found !\nAre you sure this is the right place :\n'"
+							+ path + "' ?\n");
+		}
+		catch (NumberFormatException e) {
+				System.err.println("/!\\ Please, format well your file .csv !\nReason : " + e.getLocalizedMessage() + "\n");
 		}
 	}
 }
