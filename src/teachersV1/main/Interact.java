@@ -153,11 +153,15 @@ public class Interact {
 	 * Display the actual Student List in the Program.
 	 */
 	public static void displayStudentList() {
-		int i;
-		for (i = 0; i < sList.size(); i++) {
-			System.out.print(i + ":" + sList.get(i).displayNames() + " ");
+		if (sList.isEmpty()) {
+			System.out.println("There is no Students !");
+		} else {
+			int i;
+			for (i = 0; i < sList.size(); i++) {
+				System.out.print(i + ":" + sList.get(i).displayNames() + " ");
+			}
+			System.out.println();
 		}
-		System.out.println();
 	}
 
 	/**
@@ -196,25 +200,34 @@ public class Interact {
 	 * @return The student.
 	 */
 	public static Student chooseStudentList(int index) {
-		Student s = null;
-		try {
-			s = sList.get(index);
-		} catch (IndexOutOfBoundsException e) {
-			System.out.println("Choose a existent student in the list !");
-			return null;
+		if (sList.isEmpty()) {
+			System.out.println("There is no Students !");
+		} else {
+			Student s = null;
+			try {
+				s = sList.get(index);
+			} catch (IndexOutOfBoundsException e) {
+				System.out.println("Choose a existent student in the list !");
+				return null;
+			}
+			return s;
 		}
-		return s;
+		return null;
 	}
 
 	/**
 	 * Display the actual Professors List in the Program.
 	 */
 	public static void displayProfessorList() {
-		int i;
-		for (i = 0; i < profList.size(); i++) {
-			System.out.print(i + ":" + profList.get(i) + " ");
+		if (profList.isEmpty()) {
+			System.out.println("There is no Professors !");
+		} else {
+			int i;
+			for (i = 0; i < profList.size(); i++) {
+				System.out.print(i + ":" + profList.get(i) + " ");
+			}
+			System.out.println();
 		}
-		System.out.println();
 	}
 
 	/**
@@ -225,25 +238,34 @@ public class Interact {
 	 * @return The professor.
 	 */
 	public static Professor chooseProfessorList(int index) {
-		Professor prof = null;
-		try {
-			prof = profList.get(index);
-		} catch (IndexOutOfBoundsException e) {
-			System.out.println("Choose a existent Professor in the list !");
-			return null;
+		if (profList.isEmpty()) {
+			System.out.println("There is no Professors !");
+		} else {
+			Professor prof = null;
+			try {
+				prof = profList.get(index);
+			} catch (IndexOutOfBoundsException e) {
+				System.out.println("Choose a existent Professor in the list !");
+				return null;
+			}
+			return prof;
 		}
-		return prof;
+		return null;
 	}
 
 	/**
 	 * Display the Promotion List.
 	 */
 	public static void displayPromotionList() {
-		int i;
-		for (i = 0; i < pList.size(); i++) {
-			System.out.print(i + ":" + pList.get(i).getName() + " ");
+		if (pList.isEmpty()) {
+			System.out.println("There is no Promotion !");
+		} else {
+			int i;
+			for (i = 0; i < pList.size(); i++) {
+				System.out.print(i + ":" + pList.get(i).getName() + " ");
+			}
+			System.out.println();
 		}
-		System.out.println();
 	}
 
 	/**
@@ -274,14 +296,19 @@ public class Interact {
 	 * @return The promotion.
 	 */
 	public static Promotion choosePromotionList(int index) {
-		Promotion p = null;
-		try {
-			p = pList.get(index);
-		} catch (IndexOutOfBoundsException e) {
-			System.out.println("Choose a existent Promotion in the list !");
-			return null;
+		if (pList.isEmpty()) {
+			System.out.println("There is no Promotion !");
+		} else {
+			Promotion p = null;
+			try {
+				p = pList.get(index);
+			} catch (IndexOutOfBoundsException e) {
+				System.out.println("Choose a existent Promotion in the list !");
+				return null;
+			}
+			return p;
 		}
-		return p;
+		return null;
 	}
 
 	/**

@@ -39,17 +39,24 @@ public class Core {
 	 * Display the actual Student List in the Program.
 	 */
 	public static void displayStudentList() {
-		int i;
-		for (i = 0; i < FileReadService.sList.size(); i++) {
-			if (i < FileReadService.sList.size() - 1) {
-				System.out.print("("
-						+ FileReadService.sList.get(i).displayNames() + "), ");
-			} else {
-				System.out.print("("
-						+ FileReadService.sList.get(i).displayNames() + ")");
+		if (FileReadService.sList.isEmpty()) {
+			System.out.println("There is no Students !");
+		} else {
+			int i;
+			for (i = 0; i < FileReadService.sList.size(); i++) {
+				if (i < FileReadService.sList.size() - 1) {
+					System.out.print("("
+							+ FileReadService.sList.get(i).displayNames()
+							+ "), ");
+				} else {
+					System.out
+							.print("("
+									+ FileReadService.sList.get(i)
+											.displayNames() + ")");
+				}
 			}
+			System.out.println();
 		}
-		System.out.println();
 	}
 
 	/**
