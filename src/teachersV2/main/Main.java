@@ -42,12 +42,19 @@ public class Main {
 		sb.append("7- Manage Notes\n");
 		sb.append("8- Manage Students\n");
 		sb.append("9- Manage Professors\n");
-		sb.append("10- Save the File\n");
-		sb.append("11- Quit the Program");
+		sb.append("10- Manage Promotions\n");
+		sb.append("11- Save the File\n");
+		sb.append("12- Quit the Program");
 
 		return sb.toString();
 	}
-	
+
+	/**
+	 * This the main test to run the program.
+	 * 
+	 * @param args
+	 *            The list of arguments.
+	 */
 	public static void main(String[] args) {
 
 		try {
@@ -64,7 +71,7 @@ public class Main {
 					System.out.println(menu());
 					int res = -1;
 
-					while (res < 0 || res > 11) {
+					while (res < 1 || res > 12) {
 						Scanner sc = new Scanner(System.in);
 						res = sc.nextInt();
 					}
@@ -89,7 +96,7 @@ public class Main {
 						Core.sortStudentsPromotion();
 						break;
 					case 7:
-						Core.addOrModifyMarks();
+						Core.manageMarks();
 						break;
 					case 8:
 						Core.manageStudents();
@@ -98,11 +105,14 @@ public class Main {
 						Core.manageProfessors();
 						break;
 					case 10:
+						Core.addPromotionStudent();
+						break;
+					case 11:
 						FileWriteService.runWrite();
 						System.out.println("End of the Program.");
 						System.exit(0);
 						break;
-					case 11:
+					case 12:
 						System.out.println("End of the Program.");
 						System.exit(0);
 						break;
@@ -119,8 +129,9 @@ public class Main {
 		} catch (IOException e) {
 			System.err
 					.println("File Not Found !\nAre you sure this is the right file/place ?\n");
-		} catch(IndexOutOfBoundsException e) {
-			System.err.println("Error Columns Found on the file !\nReason: " + e.getLocalizedMessage());
+		} catch (IndexOutOfBoundsException e) {
+			System.err.println("Error Columns Found on the file !\nReason: "
+					+ e.getLocalizedMessage());
 		} catch (NumberFormatException e) {
 			System.err
 					.println("/!\\ Please, format well your file .csv !\nReason : "

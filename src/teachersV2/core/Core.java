@@ -22,8 +22,14 @@ import teachersV2.io.FileReadService;
  */
 public class Core {
 
+	/*
+	 * Constant about the size of the marks' array.
+	 */
 	static final int NB_EVALUATIONS = 10;
 
+	/*
+	 * Marks' array, this array can have 10 marks.
+	 */
 	public final static String marks[] = new String[NB_EVALUATIONS];
 
 	/**
@@ -45,12 +51,12 @@ public class Core {
 			int i;
 			for (i = 0; i < FileReadService.sList.size(); i++) {
 				if (i < FileReadService.sList.size() - 1) {
-					System.out.print("("
+					System.out.print(i + ":("
 							+ FileReadService.sList.get(i).displayNames()
 							+ "), ");
 				} else {
 					System.out
-							.print("("
+							.print(i + ":("
 									+ FileReadService.sList.get(i)
 											.displayNames() + ")");
 				}
@@ -161,6 +167,92 @@ public class Core {
 		}
 	}
 
+	/**
+	 * Add the Student in the Promotion.
+	 */
+	public static void addPromotionStudent() {
+		if (FileRead.sList.isEmpty()) {
+			System.out.println("There is no Student !");
+		} else {
+			System.out
+					.println("Create a Promotion (0) or choose an existing one (1) ?");
+			int res = -1;
+
+			while (res < 0 || res > 1) {
+				Scanner sc = new Scanner(System.in);
+				res = sc.nextInt();
+			}
+			// If we create a new Promotion.
+			if (res == 0) {
+				Scanner scName = new Scanner(System.in);
+				System.out.print("Give a name: ");
+				String name = scName.nextLine();
+				Promotion pNew = new Promotion(name);
+
+				// We check if the professor doesn't still exist in the
+				// Professor List.
+				boolean exist = false;
+				for (int i = 0; i < FileRead.pList.size(); i++) {
+					if (FileRead.pList.get(i).equals(pNew)) {
+						exist = true;
+					}
+				}
+
+				if (!exist) {
+					FileRead.pList.add(pNew);
+					System.out.println("Promotion " + pNew.getName()
+							+ " created.");
+				} else {
+					System.out.println("This promotion still exist !");
+				}
+
+				System.out.println("Which student do you want to add in ?");
+				displayStudentList();
+				Scanner scIndex = new Scanner(System.in);
+
+				Student s = null;
+				while (s == null) {
+					int i = scIndex.nextInt();
+					s = chooseStudentList(i);
+				}
+				pNew.add(s);
+				System.out.println("Student " + s.displayNames()
+						+ " added to the Promotion " + pNew.getName());
+
+				// If we choose an existing Promotion.
+			} else {
+				if (FileRead.pList.isEmpty()) {
+					System.out.println("There is no Promotion !");
+				} else {
+					System.out
+							.println("Which promotion do you want to add in ?");
+					displayPromotionList();
+					Scanner scIndexP = new Scanner(System.in);
+
+					Promotion p = null;
+					while (p == null) {
+						int iP = scIndexP.nextInt();
+						p = choosePromotionList(iP);
+					}
+
+					System.out.println("Which student do you want to add in ?");
+					displayStudentList();
+					Scanner scIndexS = new Scanner(System.in);
+
+					Student s = null;
+					while (s == null) {
+						int iS = scIndexS.nextInt();
+						s = chooseStudentList(iS);
+					}
+					if (p.add(s) != 0) {
+						System.out.println("Student " + s.displayNames()
+								+ " added to the Promotion " + p.getName());
+					}
+				}
+			}
+		}
+	}
+	
 	/**
 	 * Choose the promotion in the actual List in the Program.
 	 * 
@@ -350,11 +442,11 @@ public class Core {
 	/**
 	 * Add Marks to the student in a promotion.
 	 */
-	public static void addOrModifyMarks() {
+	public static void manageMarks() {
 		if (FileReadService.sList.isEmpty()) {
 			System.out.println("There is no Student !");
 
-		} else if (FileReadService.profList.isEmpty()) {
+		} else if (FileRead.profListFiles.isEmpty()) {
 			System.out.println("There is no Professor !");
 		} else if (FileReadService.pList.isEmpty()) {
 			System.out.println("There is no Promotion !");
@@ -492,25 +584,27 @@ public class Core {
 		System.out.println();
 	}
 
-	public static int manageStudents() {
-		if (FileReadService.sList.isEmpty()) {
-			System.out.println("There is no Student !");
-		} else {
-			System.out
-					.print("Do you want to add (0) or delete (1) a student ? ");
+	/**
+	 * Can add or delete a student.
+	 */
+	public static void manageStudents() {
+		System.out.print("Do you want to add (0) or delete (1) a student ? ");
 
-			int res = -1;
+		int res = -1;
 
-			while (res < 0 || res > 1) {
-				Scanner sc = new Scanner(System.in);
-				res = sc.nextInt();
-			}
+		while (res < 0 || res > 1) {
+			Scanner sc = new Scanner(System.in);
+			res = sc.nextInt();
+		}
 
-			switch (res) {
-			case 0:
-				createStudent();
-				break;
-			case 1:
+		switch (res) {
+		case 0:
+			createStudent();
+			break;
+		case 1:
+			if (FileReadService.sList.isEmpty()) {
+				System.out.println("There is no Student !");
+			} else {
 				System.out.println("Which student do you want delete ?");
 				displayStudentList();
 				Scanner scIndexS = new Scanner(System.in);
@@ -524,36 +618,36 @@ public class Core {
 				FileReadService.sList.remove(s);
 				System.out.println("The student " + s.displayNames()
 						+ " has been deleted.");
-
-				break;
-			default:
-				createStudent();
-				break;
 			}
+			break;
+		default:
+			createStudent();
+			break;
 		}
-		return 0;
 	}
 
+	/**
+	 * Can add or delete a professor.
+	 */
 	public static void manageProfessors() {
 
-		if (FileRead.profListFiles.isEmpty()) {
-			System.out.println("There is no Professor !");
-		} else {
-			System.out
-					.print("Do you want to add (0) or delete (1) a professor ? ");
+		System.out.print("Do you want to add (0) or delete (1) a professor ? ");
 
-			int res = -1;
+		int res = -1;
 
-			while (res < 0 || res > 1) {
-				Scanner sc = new Scanner(System.in);
-				res = sc.nextInt();
-			}
+		while (res < 0 || res > 1) {
+			Scanner sc = new Scanner(System.in);
+			res = sc.nextInt();
+		}
 
-			switch (res) {
-			case 0:
-				createProfessor();
-				break;
-			case 1:
+		switch (res) {
+		case 0:
+			createProfessor();
+			break;
+		case 1:
+			if (FileRead.profListFiles.isEmpty()) {
+				System.out.println("There is no Professor !");
+			} else {
 				System.out.println("Which professor do you want delete ?");
 				displayProfessorList();
 				Scanner scIndexProf = new Scanner(System.in);
@@ -567,12 +661,11 @@ public class Core {
 				FileRead.profListFiles.remove(prof);
 				System.out.println("The professor " + prof
 						+ " has been deleted.");
-
-				break;
-			default:
-				createProfessor();
-				break;
 			}
+			break;
+		default:
+			createProfessor();
+			break;
 		}
 
 	}
