@@ -7,6 +7,7 @@ import java.util.Scanner;
 import teachersV2.core.Core;
 import teachersV2.io.FileRead;
 import teachersV2.io.FileReadService;
+import teachersV2.io.FileWriteService;
 
 /**
  * Main.java - Version 2
@@ -97,6 +98,9 @@ public class Main {
 						Core.manageProfessors();
 						break;
 					case 10:
+						FileWriteService.runWrite();
+						System.out.println("End of the Program.");
+						System.exit(0);
 						break;
 					case 11:
 						System.out.println("End of the Program.");

@@ -106,7 +106,7 @@ public class Student extends Person implements Comparable<Student> {
 
 					for (i = 0; i < NB_EVALUATIONS; i++) {
 						if (this.marks[i] != null) {
-							sb.append(marks[i]);
+							sb.append(marks[i] + " ");
 						}
 					}
 

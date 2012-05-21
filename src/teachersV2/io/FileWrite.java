@@ -1,14 +1,12 @@
 package teachersV2.io;
 
 import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Iterator;
 
 import teachersV2.Professor;
-import teachersV2.Promotion;
-import teachersV2.Student;
-import teachersV2.core.Core;
 import teachersV2.exceptions.EmptyMarks;
 
 public class FileWrite {
@@ -20,33 +18,11 @@ public class FileWrite {
 		separator = ";";
 	}
 
-	public void write(String filename) {
+	public void write(String filename) throws FileNotFoundException {
 
 		BufferedWriter writer = null;
 
 		try {
-
-			Promotion p1 = new Promotion("Biniou");
-			Core.addPromotion(p1);
-
-			Student student1 = new Student("Lor", "Jeremy", 1);
-			Student student2 = new Student("Le Roux", "Thomas", 2);
-			FileRead.sList.add(student1);
-			FileRead.sList.add(student2);
-			p1.add(student1);
-			p1.add(student2);
-
-			Professor prof1 = new Professor("Paumier", "Sébastien");
-			Professor prof2 = new Professor("Zipstein", "Marc");
-			FileRead.addProfessorEachFile(prof1);
-			FileRead.addProfessorEachFile(prof2);
-
-			prof1.setNote(p1, 1, 12, 0);
-			prof2.setNote(p1, 1, 13, 1);
-			prof1.setNote(p1, 1, 15, 7);
-
-			prof1.setNote(p1, 2, 18, 0);
-			prof1.setNote(p1, 2, 16, 3);
 
 			final FileWriter filewriter = new FileWriter(filename);
 			writer = new BufferedWriter(filewriter);
@@ -97,9 +73,9 @@ public class FileWrite {
 				} catch (EmptyMarks e) {
 					e.printStackTrace();
 				}
-				writer.write("\n");
 				
 				FileReadService.sList.remove(0);
+				writer.write("\n");
 			}
 
 			System.out.println("Writing finished\n");
@@ -135,9 +111,4 @@ public class FileWrite {
 		return separator;
 	}
 
-	public static void main(String[] args) throws IOException {
-		String filename = "C:\\Users\\Jeremy\\Desktop\\INGE2K - IR1\\Java\\workspace\\Teachers\\src\\teachersV2\\examples\\out.csv";
-		FileWrite fw = new FileWrite(filename);
-		fw.write(filename);
-	}
 }
