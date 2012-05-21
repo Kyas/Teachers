@@ -55,7 +55,9 @@ public class Evaluation {
 	 */
 	@Override
 	public String toString() {
-		return "(" + getValue() + ")";
+		StringBuilder sb = new StringBuilder();
+		sb.append(getValue());
+		return sb.toString();
 	}
 
 	/**

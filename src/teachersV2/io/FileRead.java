@@ -22,7 +22,7 @@ import teachersV2.core.Core;
  * @author Jeremy LOR (jlor@etudiant.univ-mlv.fr)
  * @author Thomas LEROUX (tleroux@etudiant.univ-mlv.fr)
  */
-public class FileReader extends FileReaderService {
+public class FileRead extends FileReadService {
 
 	/*
 	 * The temporary attribute for the student.
@@ -59,6 +59,17 @@ public class FileReader extends FileReaderService {
 		}
 		profListFiles.add(prof);
 		return 1;
+	}
+	
+	public static int getProfessor(Professor prof) {
+		int pos = 0;
+		if(prof == null) return -1;
+		for(int i = 0; i < profListFiles.size(); i++) {
+			if(profListFiles.get(i).equals(prof)) {
+				pos = i;
+			}
+		}
+		return pos;
 	}
 	
 	@Override
@@ -142,8 +153,8 @@ public class FileReader extends FileReaderService {
 					// int id : student.getId()
 					// float value : Float.valueOf(Read.marks[iProf-1])
 					// int index : iProf - 1
-					FileReaderService.profList.get(Integer.valueOf(tokens[iProf])).setNote(
-							FileReaderService.pList.get(Core.getIndexPromotion(promotion)),
+					FileReadService.profList.get(Integer.valueOf(tokens[iProf])).setNote(
+							FileReadService.pList.get(Core.getIndexPromotion(promotion)),
 							student.getId(),
 							Float.valueOf(Core.marks[iProf - 1]), iProf - 1);
 				}

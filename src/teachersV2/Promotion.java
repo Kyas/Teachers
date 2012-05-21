@@ -170,4 +170,15 @@ public class Promotion {
 	public String getName() {
 		return name;
 	}
+
+	public int remove(Student s) {
+		int i;
+		for (i = 0; i < list.size(); i++) {
+			if (list.get(i).getId() == s.getId()) {
+				list.remove(i);
+				return 1;
+			}
+		}
+		return 0;
+	}
 }

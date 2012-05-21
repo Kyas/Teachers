@@ -92,5 +92,23 @@ public class Professor extends Person {
 		}
 		return false;
 	}
+	
+	/**
+	 * Get the name of the Professor.
+	 * 
+	 * @return The name of the Professor.
+	 */
+	public String getName() {
+		return super.name;
+	}
+	
+	/**
+	 * Get the forename of the Professor.
+	 * 
+	 * @return The forename of the Professor.
+	 */
+	public String getForename() {
+		return super.forename;
+	}
 
 }

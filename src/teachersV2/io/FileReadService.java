@@ -23,7 +23,7 @@ import teachersV2.Student;
  * @author Jeremy LOR (jlor@etudiant.univ-mlv.fr)
  * @author Thomas LEROUX (tleroux@etudiant.univ-mlv.fr)
  */
-public abstract class FileReaderService {
+public abstract class FileReadService {
 
 	/*
 	 * List of Students.
