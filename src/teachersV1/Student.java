@@ -222,6 +222,24 @@ public class Student extends Person implements Comparable<Student> {
 	public Evaluation[] getMarks() {
 		return marks;
 	}
+	
+	/**
+	 * Get the name of the Student.
+	 * 
+	 * @return The name of the Student.
+	 */
+	public String getName() {
+		return super.name;
+	}
+	
+	/**
+	 * Get the forename of the Student.
+	 * 
+	 * @return The forename of the Student.
+	 */
+	public String getForename() {
+		return super.forename;
+	}
 
 	/**
 	 * Get the identifying student.

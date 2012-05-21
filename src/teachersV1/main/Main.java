@@ -29,7 +29,7 @@ public class Main {
 		/**
 		 * Creates 4 students and 2 professors.
 		 */
-		Student student1 = new Student("Lor", "Jérémy", 1);
+		Student student1 = new Student("Lor", "Jeremy", 1);
 		Student student2 = new Student("Le Roux", "Thomas", 2);
 		Student student3 = new Student("Norris", "Chuck", 3);
 
