@@ -23,6 +23,30 @@ import teachersV2.io.FileReadService;
  */
 public class Main {
 
+	/**
+	 * Display the menu.
+	 * 
+	 * @return the menu into a String.
+	 */
+	public static String menu() {
+		StringBuilder sb = new StringBuilder();
+
+		sb.append("========== Menu ==========\n");
+		sb.append("1- Display all the students\n");
+		sb.append("2- Display all the professors\n");
+		sb.append("3- Display a Promotion\n");
+		sb.append("4- Display a student (name, promotion, marks, graders)\n");
+		sb.append("5- Display a student with his name and average\n");
+		sb.append("6- Sort students in a Promotion\n");
+		sb.append("7- Manage Notes\n");
+		sb.append("8- Manage Students\n");
+		sb.append("9- Manage Professors\n");
+		sb.append("10- Save the File\n");
+		sb.append("11- Quit the Program");
+
+		return sb.toString();
+	}
+	
 	public static void main(String[] args) {
 
 		try {
@@ -36,7 +60,7 @@ public class Main {
 
 			try {
 				while (true) { // When we don't want to quit the program now.
-					System.out.println(Core.menu());
+					System.out.println(menu());
 					int res = -1;
 
 					while (res < 0 || res > 11) {
