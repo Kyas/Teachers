@@ -10,14 +10,16 @@ import teachersV2.io.FileReadService;
 import teachersV2.io.FileWriteService;
 
 /**
- * Main.java - Version 2
+ * This is the main Test for the Version Reading/Writing Mode (V2).<br />
+ * <br />
  * 
- * Copyright 2012
- * 
- * This file is part of the Java Project : Teachers.
+ * Copyright 2012 - This file is part of the Java Project : Teachers.<br />
+ * <br />
  * 
  * Teachers is free software: you can redistribute it and/or modify it under the
- * terms of the zlib license. See the COPYING file.
+ * terms of the zlib license.<br />
+ * See the COPYING file.<br />
+ * <br />
  * 
  * @author Jeremy LOR (jlor@etudiant.univ-mlv.fr)
  * @author Thomas LEROUX (tleroux@etudiant.univ-mlv.fr)

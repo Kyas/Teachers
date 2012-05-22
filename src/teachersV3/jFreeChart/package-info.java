@@ -1,5 +1,5 @@
 /**
- * This package contains all file tests.<br />
+ * This package contains the chart.<br />
  * <br />
  * 
  * Copyright 2012 - This file is part of the Java Project : Teachers.<br />
@@ -13,4 +13,4 @@
  * @author Jeremy LOR (jlor@etudiant.univ-mlv.fr)
  * @author Thomas LEROUX (tleroux@etudiant.univ-mlv.fr)
  */
-package teachersV3.examples;
+package teachersV3.jFreeChart;

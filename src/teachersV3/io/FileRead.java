@@ -8,7 +8,7 @@ import teachersV3.Student;
 import teachersV3.core.Core;
 
 /**
- * Contains the implementation for reading lines in the File - Version 2<br />
+ * Contains the implementation for reading lines in the File - Version 3<br />
  * <br />
  * 
  * Copyright 2012 - This file is part of the Java Project : Teachers.<br />

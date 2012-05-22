@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 import teachersV2.exceptions.UnknownStudent;
+import teachersV2.Student;
 
 /**
  * The Promotion permits to sort students in promotions to know where they
@@ -118,6 +119,25 @@ public class Promotion {
 	}
 
 	/**
+	 * Remove a student.
+	 * 
+	 * @param s
+	 *            The student.
+	 * @return <code>1</code> if the student was removed from a promotion,
+	 *         <code>0</code> otherwise.
+	 */
+	public int remove(Student s) {
+		int i;
+		for (i = 0; i < list.size(); i++) {
+			if (list.get(i).getId() == s.getId()) {
+				list.remove(i);
+				return 1;
+			}
+		}
+		return 0;
+	}
+
+	/**
 	 * Sort the list of Students depending of the sort mode
 	 * (ascending/descending order).
 	 * 
@@ -171,14 +191,4 @@ public class Promotion {
 		return name;
 	}
 
-	public int remove(Student s) {
-		int i;
-		for (i = 0; i < list.size(); i++) {
-			if (list.get(i).getId() == s.getId()) {
-				list.remove(i);
-				return 1;
-			}
-		}
-		return 0;
-	}
 }

@@ -116,6 +116,25 @@ public class Promotion {
 		}
 		return 0;
 	}
+	
+	/**
+	 * Remove a student.
+	 * 
+	 * @param s
+	 *            The student.
+	 * @return <code>1</code> if the student was removed from a promotion,
+	 *         <code>0</code> otherwise.
+	 */
+	public int remove(Student s) {
+		int i;
+		for (i = 0; i < list.size(); i++) {
+			if (list.get(i).getId() == s.getId()) {
+				list.remove(i);
+				return 1;
+			}
+		}
+		return 0;
+	}
 
 	/**
 	 * Sort the list of Students depending of the sort mode
@@ -169,16 +188,5 @@ public class Promotion {
 	 */
 	public String getName() {
 		return name;
-	}
-
-	public int remove(Student s) {
-		int i;
-		for (i = 0; i < list.size(); i++) {
-			if (list.get(i).getId() == s.getId()) {
-				list.remove(i);
-				return 1;
-			}
-		}
-		return 0;
 	}
 }

@@ -1,12 +1,14 @@
 /**
- * This package contains the main to run the program.
+ * This package contains the main to run the program.<br />
+ * <br />
  * 
- * Copyright 2012 
+ * Copyright 2012 - This file is part of the Java Project : Teachers.<br />
+ * <br />
  * 
- * This file is part of the Java Project : Teachers.
- * 
- * Teachers is free software: you can redistribute it and/or modify
- * it under the terms of the zlib license. See the COPYING file.
+ * Teachers is free software: you can redistribute it and/or modify it under the
+ * terms of the zlib license.<br />
+ * See the COPYING file.<br />
+ * <br />
  * 
  * @author Jeremy LOR (jlor@etudiant.univ-mlv.fr)
  * @author Thomas LEROUX (tleroux@etudiant.univ-mlv.fr)

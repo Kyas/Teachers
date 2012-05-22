@@ -10,7 +10,7 @@ import teachersV2.Professor;
 import teachersV2.exceptions.EmptyMarks;
 
 /**
- *  Contains the implementation for writing lines in the File - Version 2<br />
+ * Contains the implementation for writing lines in the File - Version 2<br />
  * <br />
  * 
  * Copyright 2012 - This file is part of the Java Project : Teachers.<br />

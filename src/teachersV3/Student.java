@@ -195,6 +195,16 @@ public class Student extends Person implements Comparable<Student> {
 		return -1;
 	}
 
+	public boolean isEmptyMarks() {
+		boolean empty = false;
+		for (int i = 0; i < marks.length; i++) {
+			if (marks[i] == null) {
+				empty = true;
+			}
+		}
+		return empty;
+	}
+
 	/**
 	 * Get the marks of a student.
 	 * 
@@ -231,7 +241,7 @@ public class Student extends Person implements Comparable<Student> {
 	public String getName() {
 		return super.name;
 	}
-	
+
 	/**
 	 * Get the forename of the Student.
 	 * 
@@ -240,7 +250,7 @@ public class Student extends Person implements Comparable<Student> {
 	public String getForename() {
 		return super.forename;
 	}
-	
+
 	/**
 	 * Get the identifying student.
 	 * 
