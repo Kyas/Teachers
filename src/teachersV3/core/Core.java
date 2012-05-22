@@ -3,11 +3,11 @@ package teachersV3.core;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import teachersV2.Professor;
-import teachersV2.Promotion;
-import teachersV2.Student;
-import teachersV2.io.FileRead;
-import teachersV2.io.FileReadService;
+import teachersV3.Professor;
+import teachersV3.Promotion;
+import teachersV3.Student;
+import teachersV3.io.FileRead;
+import teachersV3.io.FileReadService;
 
 /**
  * Read.java

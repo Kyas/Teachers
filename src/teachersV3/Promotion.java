@@ -3,7 +3,7 @@ package teachersV3;
 import java.util.ArrayList;
 import java.util.Collections;
 
-import teachersV2.exceptions.UnknownStudent;
+import teachersV3.exceptions.UnknownStudent;
 
 /**
  * The Promotion permits to sort students in promotions to know where they

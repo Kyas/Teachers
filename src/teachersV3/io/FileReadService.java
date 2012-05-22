@@ -4,9 +4,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import teachersV2.Professor;
-import teachersV2.Promotion;
-import teachersV2.Student;
+import teachersV3.Professor;
+import teachersV3.Promotion;
+import teachersV3.Student;
 
 /**
  * The service for the class FileReader - Version 2<br />

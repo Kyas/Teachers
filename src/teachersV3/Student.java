@@ -3,7 +3,7 @@ package teachersV3;
 import java.util.HashSet;
 import java.util.Set;
 
-import teachersV2.exceptions.EmptyMarks;
+import teachersV3.exceptions.EmptyMarks;
 
 /**
  * A student is represented with an id, a promotion if he got one and can have

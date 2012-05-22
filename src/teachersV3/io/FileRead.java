@@ -2,10 +2,10 @@ package teachersV3.io;
 
 import java.util.ArrayList;
 
-import teachersV2.Professor;
-import teachersV2.Promotion;
-import teachersV2.Student;
-import teachersV2.core.Core;
+import teachersV3.Professor;
+import teachersV3.Promotion;
+import teachersV3.Student;
+import teachersV3.core.Core;
 
 /**
  * Contains the implementation for reading lines in the File - Version 2<br />

@@ -1,6 +1,6 @@
 package teachersV3;
 
-import teachersV2.exceptions.UnknownStudent;
+import teachersV3.exceptions.UnknownStudent;
 
 /**
  * The professor can put marks to students depending of the promotion, the id of
