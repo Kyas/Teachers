@@ -60,11 +60,7 @@ public class MainInteract {
 				case 8:
 					Interact.sortStudentsPromotion(1);
 					break;
-				case 9:
-					System.out.println("End of the Program.");
-					System.exit(0);
-					break;
-				default:
+				case 9: default:
 					System.out.println("End of the Program.");
 					System.exit(0);
 					break;

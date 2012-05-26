@@ -114,11 +114,7 @@ public class Main {
 						System.out.println("End of the Program.");
 						System.exit(0);
 						break;
-					case 12:
-						System.out.println("End of the Program.");
-						System.exit(0);
-						break;
-					default:
+					case 12: default:
 						System.out.println("End of the Program.");
 						System.exit(0);
 						break;

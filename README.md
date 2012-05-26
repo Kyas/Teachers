@@ -21,10 +21,10 @@ Report a bug:      https://github.com/Kyas/Teachers/issues
 =======================
         License
 =======================
-Compression is Free Software.
+Teachers is Free Software.
 
 
 (learn more: http://www.gnu.org/philosophy/free-sw.html)
  
-Compression is released under the zlib License.
+Teachers is released under the zlib License.
 Please read the COPYING file for details.
