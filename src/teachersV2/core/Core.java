@@ -26,12 +26,12 @@ import teachersV2.io.FileReadService;
  */
 public class Core {
 
-	/*
+	/**
 	 * Constant about the size of the marks' array.
 	 */
 	static final int NB_EVALUATIONS = 10;
 
-	/*
+	/**
 	 * Marks' array, this array can have 10 marks.
 	 */
 	public final static String marks[] = new String[NB_EVALUATIONS];

@@ -23,28 +23,27 @@ import teachersV3.core.Core;
  * @author Thomas LEROUX (tleroux@etudiant.univ-mlv.fr)
  */
 public class FileRead extends FileReadService {
-
-	/*
+	/**
 	 * The temporary attribute for the student.
 	 */
 	public static Student student = null;
 
-	/*
+	/**
 	 * The temporary attribute for the student.
 	 */
 	public static Professor professor = null;
 
-	/*
+	/**
 	 * The temporary attribute for the Promotion.
 	 */
 	public static Promotion promotion = null;
 	
-	/*
+	/**
 	 * The Real List for all files which contains all professors.
 	 */
 	public static ArrayList<Professor> profListFiles = new ArrayList<Professor>();
 
-	/*
+	/**
 	 * The temporary attribute for the number of student read. It's a kind of an
 	 * incrementation for the student added.
 	 */

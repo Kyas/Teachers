@@ -31,6 +31,9 @@ import teachersV3.exceptions.EmptyMarks;
  */
 public class PieChart extends JFrame {
 
+	/**
+	 * serialVersionUID.
+	 */
 	private static final long serialVersionUID = 1L;
 
 	/**

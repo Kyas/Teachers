@@ -22,12 +22,12 @@ import teachersV1.exceptions.UnknownStudent;
  * @author Thomas LEROUX (tleroux@etudiant.univ-mlv.fr)
  */
 public class Promotion {
-	/*
+	/**
 	 * The name of the Promotion.
 	 */
 	private String name;
 
-	/*
+	/**
 	 * The List of Students (ArrayList).
 	 */
 	public ArrayList<Student> list;

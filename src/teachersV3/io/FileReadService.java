@@ -24,18 +24,17 @@ import teachersV3.Student;
  * @author Thomas LEROUX (tleroux@etudiant.univ-mlv.fr)
  */
 public abstract class FileReadService {
-
-	/*
+	/**
 	 * List of Students.
 	 */
 	public static ArrayList<Student> sList = new ArrayList<Student>();
 
-	/*
+	/**
 	 * List of Professors.
 	 */
 	public static ArrayList<Professor> profList = new ArrayList<Professor>();
 
-	/*
+	/**
 	 * List of Promotions.
 	 */
 	public static ArrayList<Promotion> pList = new ArrayList<Promotion>();

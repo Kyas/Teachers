@@ -56,6 +56,9 @@ public class Main {
 		return sb.toString();
 	}
 	
+	/**
+	 * Do all the games' tests.
+	 */
 	public static void allTests() {
 		Promotion p1 = new Promotion("Biniou");
 		Core.addPromotion(p1);

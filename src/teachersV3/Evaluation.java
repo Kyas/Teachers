@@ -17,17 +17,17 @@ package teachersV3;
  * @author Thomas LEROUX (tleroux@etudiant.univ-mlv.fr)
  */
 public class Evaluation {
-	/*
+	/**
 	 * The grader.
 	 */
 	private Professor grader;
 
-	/*
+	/**
 	 * The corrected student.
 	 */
 	private final Student corrected;
 
-	/*
+	/**
 	 * The value of the mark.
 	 */
 	private float value;

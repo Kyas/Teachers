@@ -22,22 +22,22 @@ import teachersV1.exceptions.EmptyMarks;
  * @author Thomas LEROUX (tleroux@etudiant.univ-mlv.fr)
  */
 public class Student extends Person implements Comparable<Student> {
-	/*
+	/**
 	 * The Promotion.
 	 */
 	private Promotion p;
 
-	/*
+	/**
 	 * The number of Evaluations.
 	 */
 	static final int NB_EVALUATIONS = 10;
 
-	/*
+	/**
 	 * The marks' Array of a specified student.
 	 */
 	private final Evaluation marks[] = new Evaluation[NB_EVALUATIONS];
 
-	/*
+	/**
 	 * The identifying student.
 	 */
 	private final int id;

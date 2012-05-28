@@ -25,17 +25,17 @@ import teachersV1.Student;
  */
 public class Interact {
 
-	/*
+	/**
 	 * List of Students.
 	 */
 	static ArrayList<Student> sList = new ArrayList<Student>();
 
-	/*
+	/**
 	 * List of Professors.
 	 */
 	static ArrayList<Professor> profList = new ArrayList<Professor>();
 
-	/*
+	/**
 	 * List of Promotions.
 	 */
 	static ArrayList<Promotion> pList = new ArrayList<Promotion>();

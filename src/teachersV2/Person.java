@@ -16,12 +16,12 @@ package teachersV2;
  * @author Thomas LEROUX (tleroux@etudiant.univ-mlv.fr)
  */
 abstract class Person {
-	/*
+	/**
 	 * The name of the Person.
 	 */
 	protected final String name;
 
-	/*
+	/**
 	 * The first name of the Person.
 	 */
 	protected final String forename;
