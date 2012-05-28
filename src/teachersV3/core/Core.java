@@ -382,10 +382,6 @@ public class Core {
 
 	/**
 	 * Sort students in a promotion by average.
-	 * 
-	 * @param mode
-	 *            if <code>0</code> the sort is in ascending order,
-	 *            <code>1</code>descending order otherwise.
 	 */
 	public static void sortStudentsPromotion() {
 		if (FileReadService.sList.isEmpty()) {
