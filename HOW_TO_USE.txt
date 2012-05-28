@@ -3,3 +3,66 @@
 ==============================
 
 (Fichier en français)
+
+Teachers (notesElevesProfesseurs) est un programme permettant de gérer une liste d'élèves
+avec leurs notes et les professeurs qui les évaluent.
+
+Nous avions organisé notre programme sous forme de 3 archives (jar) :
+- TeachersV1 : Mode console avec un jeu de tests fourni.
+- TeachersV2 : Gestion de données en mode console dans des fichiers au format csv 
+		(accompagné d'un mode console interactif).
+- TeachersV3 : Statisques diverses avec JFreeChart (affiche en camembert).
+
+Nous allons vous expliquer comment utiliser chaque version correctement.
+
+==============================
+	UTILISATION 
+	Teachers V1
+==============================
+
+1) Positionnez vous dans le même dossier où contient le fichier
+   "lor_leroux_version1.jar"
+2) Executez la commande java -jar lor_leroux_version1.jar
+3) Vous verrez les tests demandés d'après l'énoncé.
+
+==============================
+	UTILISATION 
+	Teachers V2
+==============================
+
+1) Positionnez vous dans le même dossier où contient le fichier
+   "lor_leroux_version2.jar"
+2) Executez la commande java -jar lor_leroux_version2.jar
+3) Deux choix s'offrent à vous :
+
+- Cas simple avec tests fournis =>
+Si vous voulez démarrer avec un fichier vide à la base, executez la commande 2) sans arguments,
+puis appuyez sur 0 pour faire apparaître tous les tests, il ne vous reste plus qu'à donner
+un nom de fichier.csv AVEC SON CHEMIN ABSOLU !
+
+Exemple : Choose a path to save (...\file.csv) => C:\Users\Name\Desktop\out.csv (sur Windows).
+
+- Cas interact avec un fichier rempli en entrée :
+Si vous voulez tester la lecture d'un fichier déjà existant et que le programme rentre en mémoire ses données,
+veuillez utiliser l'exemple ci-dessous :
+
+Exemple : java -jar lor_leroux_version2.jar "C:\Users\...\workspace\Teachers\src\TeachersV2\examples\notes.csv" (sur Windows).
+
+Puis faites toutes les manipulations offertes pour vour (ajouts/suppressions, affichages etc.)
+
+==============================
+	UTILISATION 
+	Teachers V3
+==============================
+Pour utiliser les statisques de JFreeChart, il est obligatoire d'entrer un argument (chemin du fichier) 
+d'où un fichier NON VIDE pour montrer les moyennes d'un élève et la moyenne des élèves d'une Promotion.
+
+1) Positionnez vous dans le même dossier où contient le fichier
+   "lor_leroux_version3.jar"
+2) Executez la commande java -jar lor_leroux_version3.jar avec un argument (chemin absolu du fichier) !
+
+Exemple : java -jar lor_leroux_version3.jar "C:\Users\...\workspace\Teachers\src\TeachersV3\examples\test.csv" (sur Windows).
+
+Vous verrez chaque fenêtre d'un camembert pour la moyenne d'un élève et les moyennes des élèves d'une Promotion !
+
+Si vous aviez des questions, veuillez nous contacter !
