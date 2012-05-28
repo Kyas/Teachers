@@ -4,6 +4,10 @@ import java.io.IOException;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
+import teachersV2.Professor;
+import teachersV2.Promotion;
+import teachersV2.Student;
+import teachersV2.exceptions.UnknownStudent;
 import teachersV2.core.Core;
 import teachersV2.io.FileRead;
 import teachersV2.io.FileReadService;
@@ -35,6 +39,7 @@ public class Main {
 		StringBuilder sb = new StringBuilder();
 
 		sb.append("========== Menu ==========\n");
+		sb.append("0- Do ALL the tests ! (File .csv empty)\n");
 		sb.append("1- Display all the students\n");
 		sb.append("2- Display all the professors\n");
 		sb.append("3- Display a Promotion\n");
@@ -49,6 +54,87 @@ public class Main {
 		sb.append("12- Quit the Program");
 
 		return sb.toString();
+	}
+	
+	public static void allTests() {
+		Promotion p1 = new Promotion("Biniou");
+		Core.addPromotion(p1);
+		Promotion p2 = new Promotion("GodLike");
+		Core.addPromotion(p2);
+
+		/**
+		 * Creates 4 students and 2 professors.
+		 */
+		Student student1 = new Student("Lor", "Jeremy", 1);
+		Core.addStudent(student1);
+		Student student2 = new Student("Le Roux", "Thomas", 2);
+		Core.addStudent(student2);
+		Student student3 = new Student("Norris", "Chuck", 3);
+		Core.addStudent(student3);
+
+		Professor prof1 = new Professor("Paumier", "Sébastien");
+		Core.addProfessors(prof1);
+		Professor prof2 = new Professor("Zipstein", "Marc");
+		Core.addProfessors(prof2);
+
+		/**
+		 * Put students in their promotions.
+		 * 
+		 * Two students are in the 1st Promotion. The third is in the 2nd
+		 * Promotion.
+		 */
+		p1.add(student1);
+		p1.add(student2);
+		p2.add(student3);
+
+		/**
+		 * Put marks to students.
+		 * 
+		 * For example, we put marks for students in the 1st Promotion.
+		 */
+		prof1.setNote(p1, 1, 12, 0);
+		prof2.setNote(p1, 1, 13, 1);
+		prof1.setNote(p1, 1, 15, 7);
+
+		prof1.setNote(p1, 2, 18, 0);
+		prof1.setNote(p1, 2, 16, 3);
+		prof1.setNote(p1, 2, 15, 5);
+		
+		prof1.setNote(p2, 3, 20, 6);
+
+		/**
+		 * Display all the students in a Promotion depending of his Promotion.
+		 * 
+		 * For example, we search students by their id in the 1st Promotion.
+		 */
+
+		try {
+			System.out.println(p1.search(1));
+			System.out.println(p1.search(2));
+			System.out.println(p2.search(3));
+		} catch (UnknownStudent e) {
+			System.out.println(e.getMessage());
+		}
+
+		/**
+		 * Display averages of students.
+		 */
+		System.out.println();
+		System.out.println(student1.displayAverage());
+		System.out.println(student2.displayAverage());
+		System.out.println(student3.displayAverage());
+
+		/**
+		 * Sort the promotion 1 with the 2 modes.
+		 */
+		System.out.println();
+		System.out.println("Ascending Order :");
+		p1.sort(0);
+		System.out.println(p1);
+
+		System.out.println("Descending Order :");
+		p1.sort(1);
+		System.out.println(p1);
 	}
 
 	/**
@@ -73,12 +159,18 @@ public class Main {
 					System.out.println(menu());
 					int res = -1;
 
-					while (res < 1 || res > 12) {
+					while (res < 0 || res > 12) {
 						Scanner sc = new Scanner(System.in);
 						res = sc.nextInt();
 					}
 
 					switch (res) {
+					case 0:
+						allTests();
+						FileWriteService.runWrite();
+						System.out.println("End of the Program.");
+						System.exit(0);
+						break;
 					case 1:
 						Core.displayStudentList();
 						break;

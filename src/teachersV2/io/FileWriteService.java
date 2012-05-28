@@ -52,7 +52,7 @@ public class FileWriteService {
 							+ FileReadService.sList.get(i).displayNames()
 							+ " doesn't have marks !");
 				} else {
-					System.out.println("Choose the path to save :");
+					System.out.println("Choose the path to save (...\file.csv) :");
 
 					Scanner sc = new Scanner(System.in);
 					String filename = sc.nextLine();
