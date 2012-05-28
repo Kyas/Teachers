@@ -147,8 +147,8 @@ public class PieChart extends JFrame {
 		result.setValue("[15-20[", count5);
 		try {
 			int i;
-			for (i = 0; i < p.list.size(); i++) {
-				int average = (int) (p.list.get(i).average());
+			for (i = 0; i < p.getList().size(); i++) {
+				int average = (int) (p.getList().get(i).average());
 
 				if (average >= 0 && average <= 8) {
 					result.setValue("[0-8[", ++count1);

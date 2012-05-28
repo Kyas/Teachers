@@ -177,13 +177,13 @@ public class Student extends Person implements Comparable<Student> {
 	 *         average1 = average2, <code>1</code> if average1 < average2
 	 */
 	@Override
-	public int compareTo(Student eleve) {
+	public int compareTo(Student student) {
 		float average1 = 0;
 		float average2 = 0;
 
 		try {
 			average1 = this.average();
-			average2 = eleve.average();
+			average2 = student.average();
 		} catch (EmptyMarks e) {
 			e.getMessage();
 		}

@@ -30,7 +30,7 @@ public class Promotion {
 	/**
 	 * The List of Students (ArrayList).
 	 */
-	public ArrayList<Student> list;
+	private ArrayList<Student> list;
 
 	/**
 	 * The constructor with a parameter.

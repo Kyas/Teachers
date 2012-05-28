@@ -30,7 +30,7 @@ public class Promotion {
 	/**
 	 * The List of Students (ArrayList).
 	 */
-	public ArrayList<Student> list;
+	private ArrayList<Student> list;
 
 	/**
 	 * The constructor with a parameter.
@@ -40,7 +40,7 @@ public class Promotion {
 	 */
 	public Promotion(String name) {
 		this.name = name;
-		list = new ArrayList<Student>();
+		setList(new ArrayList<Student>());
 	}
 
 	/**
@@ -57,8 +57,8 @@ public class Promotion {
 		boolean found = false;
 		int i = 0;
 
-		while (i < list.size() && !found) {
-			s = list.get(i);
+		while (i < getList().size() && !found) {
+			s = getList().get(i);
 			if (s.getId() == id)
 				found = true;
 			i++;
@@ -82,8 +82,8 @@ public class Promotion {
 		StringBuilder sb = new StringBuilder();
 		int i;
 		sb.append("=======================\n\tPROMOTION\n=======================\n");
-		for (i = 0; i < list.size(); i++) {
-			sb.append(list.get(i));
+		for (i = 0; i < getList().size(); i++) {
+			sb.append(getList().get(i));
 		}
 		return sb.toString();
 	}
@@ -99,15 +99,15 @@ public class Promotion {
 	public int add(Student student) {
 		int i;
 		boolean error = false;
-		for (i = 0; i < list.size(); i++) {
-			if (list.get(i).getId() == student.getId()) {
+		for (i = 0; i < getList().size(); i++) {
+			if (getList().get(i).getId() == student.getId()) {
 				error = true;
 			}
 		}
 		if (error) {
 			System.out.println("Error : Same ID in the Promotion !");
 		} else {
-			list.add(student);
+			getList().add(student);
 			if (student.getP() != null) {
 				student.setP(null);
 			}
@@ -127,9 +127,9 @@ public class Promotion {
 	 */
 	public int remove(Student s) {
 		int i;
-		for (i = 0; i < list.size(); i++) {
-			if (list.get(i).getId() == s.getId()) {
-				list.remove(i);
+		for (i = 0; i < getList().size(); i++) {
+			if (getList().get(i).getId() == s.getId()) {
+				getList().remove(i);
 				return 1;
 			}
 		}
@@ -146,14 +146,14 @@ public class Promotion {
 	 * @return The sorted list.
 	 */
 	public int sort(int mode) {
-		if (this.list != null) {
+		if (this.getList() != null) {
 			if (mode == 0) { /* If mode = 0; ascending */
 
-				Collections.sort(list);
+				Collections.sort(getList());
 
 			} else if (mode == 1) { /* If mode = 1; descending */
 
-				Collections.sort(list, Collections.reverseOrder());
+				Collections.sort(getList(), Collections.reverseOrder());
 
 			} else {
 				return 0;
@@ -188,5 +188,13 @@ public class Promotion {
 	 */
 	public String getName() {
 		return name;
+	}
+
+	public ArrayList<Student> getList() {
+		return list;
+	}
+
+	public void setList(ArrayList<Student> list) {
+		this.list = list;
 	}
 }
