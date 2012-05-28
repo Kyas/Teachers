@@ -75,7 +75,7 @@ public class Main {
 		Student student3 = new Student("Norris", "Chuck", 3);
 		Core.addStudent(student3);
 
-		Professor prof1 = new Professor("Paumier", "Sébastien");
+		Professor prof1 = new Professor("Paumier", "Sebastien");
 		Core.addProfessors(prof1);
 		Professor prof2 = new Professor("Zipstein", "Marc");
 		Core.addProfessors(prof2);

@@ -33,7 +33,7 @@ public class Main {
 		Student student2 = new Student("Le Roux", "Thomas", 2);
 		Student student3 = new Student("Norris", "Chuck", 3);
 
-		Professor prof1 = new Professor("Paumier", "Sébastien");
+		Professor prof1 = new Professor("Paumier", "Sebastien");
 		Professor prof2 = new Professor("Zipstein", "Marc");
 
 		/**
